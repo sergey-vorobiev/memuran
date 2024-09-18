@@ -1,0 +1,52 @@
+:root {
+    /* Breakpoints */
+    --xs: 0;
+    --sm: 576px;
+    --md: 768px;
+    --lg: 992px;
+    --xl: 1200px;
+    --xxl: 1600px;
+
+    /* Spacing */
+    --space-xxxs: 0.25em;
+    --space-xxs: 0.375em;
+    --space-xs: 0.5em;
+    --space-sm: 0.75em;
+    --space-md: 1.25em;
+    --space-lg: 2em;
+    --space-xl: 3.25em;
+    --space-xxl: 5.25em;
+    --space-xxxl: 8.5em;
+
+    /* Typography */
+    --font-primary: "Nunito", sans-serif;
+    --font-secondary: var(--font-primary);
+
+    --text-base-size: 1.25em;
+    --text-scale-ratio: 1.2;
+
+    --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+    --text-sm: calc(1em / var(--text-scale-ratio));
+    --text-md: calc(1em * var(--text-scale-ratio));
+    --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+
+    --heading-line-height: 1.2;
+    --body-line-height: 1.4;
+
+    /* Colors */
+    --color-text: #444;
+    --color-text-heading: #222;
+    --color-text-subtle: var(--gray-6);
+    --color-link: #fff6c0;
+    --color-link-hover: #222;
+}
+
+@media (min-width: var(--md)) {
+    :root {
+        --text-base-size: 1.25em;
+        --text-scale-ratio: 1.25;
+    }
+}
