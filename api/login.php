@@ -20,32 +20,26 @@ include_once 'objects/user.php';
 // получаем соединение с базой данных 
 $database = new Database();
 $db = $database->getConnection();
- 
+
 // создание объекта 'User' 
 $user = new User($db);
  
 // получаем данные 
-$data = json_decode(file_get_contents("php://input"));
+$data = $_POST;
 
-// !!!
-var_dump($_POST["email"]);
-var_dump($_POST["password"]);
-
-$user->user_email = $_POST["email"];
-$user->user_password = $_POST["password"];
- 
 // устанавливаем значения 
-$user->email = $data->email;
+$user->user_email = $data["email"];
 $email_exists = $user->emailExists();
- 
+
 // существует ли электронная почта и соответствует ли пароль тому, что находится в базе данных 
-if ( $email_exists && password_verify($data->password, $user->password) ) {
+if ( $email_exists && password_verify($data["password"], $user->user_password) ) {
  
     $user = array(
-        "id" => $user->id,
-        "login" => $user->login,
-        "email" => $user->email,
-        "img_account" => $user->img_account
+        "ID" => $user->ID,
+        "user_name" => $user->user_name,
+        "user_login" => $user->user_login,
+        "user_email" => $user->user_email,
+        "user_role" => $user->user_role
     );
  
     // код ответа 

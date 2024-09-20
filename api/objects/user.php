@@ -66,19 +66,19 @@ class User {
     function emailExists(){
  
         // запрос, чтобы проверить, существует ли электронная почта 
-        $query = "SELECT ID, user_login, user_password
+        $query = "SELECT ID, user_name, user_login, user_password, user_role
                 FROM " . $this->table_name . "
-                WHERE email = ?
+                WHERE user_email = ?
                 LIMIT 0,1";
      
         // подготовка запроса 
         $stmt = $this->conn->prepare( $query );
      
         // инъекция 
-        $this->email=htmlspecialchars(strip_tags($this->email));
+        $this->user_email=htmlspecialchars(strip_tags($this->user_email));
      
         // привязываем значение e-mail 
-        $stmt->bindParam(1, $this->email);
+        $stmt->bindParam(1, $this->user_email);
      
         // выполняем запрос 
         $stmt->execute();
@@ -94,10 +94,11 @@ class User {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
      
             // присвоим значения свойствам объекта 
-            $this->id = $row['id'];
-            $this->login = $row['login'];
-            $this->password = $row['password'];
-            $this->img_account = $row['img_account'];
+            $this->ID = $row['ID'];
+            $this->user_name = $row['user_name'];
+            $this->user_login = $row['user_login'];
+            $this->user_password = $row['user_password'];
+            $this->user_role = $row['user_role'];
      
             // вернём 'true', потому что в базе данных существует электронная почта 
             return true;
