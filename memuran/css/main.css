@@ -7,8 +7,13 @@ body {
 }
 
 .container {
-    max-width: 800px;
+    max-width: var(--width-container);
+    padding: 0 var(--main-padding);
     margin: 0 auto;
+}
+
+article {
+    text-align: var(--align-text);
 }
 
 /* Typography */
@@ -70,15 +75,26 @@ ul, ol, p {
 
 ul, ol {
     list-style-position: outside;
-    padding-left: 24px;
 }
 
 ul {
     list-style-type: disc;
+    padding-left: 1em;
 }
 
 ol {
-    list-style-type: decimal;
+    list-style-type: none;
+    counter-reset: li;
+    padding-left: 0px;
+}
+
+ol > li > ol {
+    padding-left: 1em;
+}
+
+ol > li:before{
+    counter-increment: li;
+    content: counters(li, ".") ". ";
 }
 
 ul li, ol li {
@@ -87,4 +103,104 @@ ul li, ol li {
 
 em {
     font-style: italic;
+}
+
+/* Image */
+figure {
+    margin: var(--space-sm) 0px var(--space-sm) 0px;
+    text-align: var(--align-image);
+}
+
+img {
+    max-width: 100%;
+    border-radius: var(--image-border-radius);
+}
+
+/* Table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: var(--space-lg);
+    border: var(--table-border-width) solid var(--table-border-color);
+}
+
+th, td {
+    padding: var(--table-cell-padding);
+    text-align: left;
+    border: var(--table-border-width) solid var(--table-border-color);
+}
+
+th {
+    background-color: var(--table-header-bg);
+    color: var(--table-header-color);
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: var(--table-striped-row-bg);
+}
+
+tr:hover {
+    background-color: var(--table-row-hover-bg);
+}
+
+/* Blockquote */
+blockquote {
+    border-left: var(--table-border-width) solid var(--blockquote-border-color);
+    background-color: var(--blockquote-bg);
+    color: var(--blockquote-text-color);
+    padding: var(--blockquote-padding);
+    margin: var(--blockquote-margin) 0;
+    font-size: var(--blockquote-font-size);
+    font-style: italic;
+}
+
+blockquote p {
+    margin: 0px;
+}
+
+blockquote cite {
+    display: block;
+    margin-top: var(--space-xs);
+    color: var(--blockquote-cite-color);
+    font-size: var(--blockquote-cite-font-size);
+    text-align: right;
+}
+
+/* Controls */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+    font-size: var(--text-md);
+}
+
+input, textarea {
+    padding: var(--space-sm);
+    border: 1px solid var(--table-border-color);
+    border-radius: var(--image-border-radius);
+    margin-bottom: var(--space-md);
+    font-family: var(--font-primary);
+    font-size: var(--text-md);
+}
+
+button {
+    background-color: var(--color-link);
+    color: #fff;
+    padding: var(--space-sm);
+    border: none;
+    border-radius: var(--image-border-radius);
+    cursor: pointer;
+    font-family: var(--font-primary);
+    font-size: var(--text-md);
+}
+
+button:hover {
+    background-color: var(--color-link-hover);
 }
