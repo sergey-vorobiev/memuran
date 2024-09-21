@@ -14,7 +14,7 @@ include_once '../objects/music.php';
 $utilities = new Utilities();
 
 // создание подключения 
-$database = new Database();
+$database = newDatabase();
 $db = $database->getConnection();
 
 // инициализация объекта 

@@ -19,7 +19,7 @@ include_once 'config/database.php';
 include_once 'objects/user.php';
  
 // получаем соединение с базой данных 
-$database = new Database();
+$database = newDatabase();
 $db = $database->getConnection();
  
 // создание объекта 'User' 

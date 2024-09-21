@@ -7,7 +7,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once 'config/database.php';
 include_once 'objects/audition.php';
 
-$database = new Database();
+$database = newDatabase();
 $db = $database->getConnection();
 
 $audition = new Audition($db);

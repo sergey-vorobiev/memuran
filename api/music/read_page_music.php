@@ -9,7 +9,7 @@ include_once '../objects/like.php';
 include_once '../objects/comment.php';
 include_once '../objects/user.php';
 
-$database = new Database();
+$database = newDatabase();
 $db = $database->getConnection();
 
 $music = new Music($db);

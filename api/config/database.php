@@ -1,12 +1,20 @@
 <?php
-class Database {
 
+class Database {
     // укажите свои учетные данные базы данных 
-    private $host = "localhost";
-    private $db_name = "memuran";
-    private $username = "root";
-    private $password = "";
+    private $host;
+    private $db_name;
+    private $username;
+    private $password;
     public $conn;
+
+    // Конструктор, который принимает параметры для подключения к БД
+    public function __construct($host, $db_name, $username, $password) {
+        $this->host = $host;
+        $this->db_name = $db_name;
+        $this->username = $username;
+        $this->password = $password;
+    }
 
     // получаем соединение с БД 
     public function getConnection(){
@@ -21,6 +29,13 @@ class Database {
         }
 
         return $this->conn;
-    }
+    } 
 }
+
+
+function newDatabase() {
+    include_once 'connect-data.php';
+    return new Database($host_connect, $db_name_connect, $username_connect, $password_connect);
+}
+
 ?>

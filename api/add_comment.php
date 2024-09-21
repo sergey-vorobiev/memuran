@@ -7,7 +7,7 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 include_once 'config/database.php';
 include_once 'objects/comment.php';
 
-$database = new Database();
+$database = newDatabase();
 $db = $database->getConnection();
 
 $comment = new Comment($db);
