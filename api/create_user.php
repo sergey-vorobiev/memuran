@@ -27,15 +27,11 @@ $user = new User($db);
 // получаем данные 
 $data = json_decode(file_get_contents("php://input")); // ???
  
-// устанавливаем значения 
-// $user->user_name = $data->user_name;
-// $user->user_login = $data->user_login;
-// $user->user_password = $data->user_password;
-// $user->user_email = $data->user_email;
-$user->user_name = $_GET['user_name'];
-$user->user_login = $_GET['user_login'];
-$user->user_password = $_GET['user_password'];
-$user->user_email = $_GET['user_email'];
+// устанавливаем значения
+ $user->user_name = $data->user_name;
+ $user->user_login = $data->user_login;
+ $user->user_password = $data->user_password;
+ $user->user_email = $data->user_email;
 
 // создание пользователя 
 if (

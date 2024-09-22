@@ -18,10 +18,3 @@ $from_record_num = ($records_per_page * $page) - $records_per_page;
 
 // установить часовой пояс по умолчанию 
 date_default_timezone_set('Europe/Moscow');
-
-// переменные, используемые для JWT 
-$key = "your_secret_key";
-$iss = "http://any-site.org";
-$aud = "http://any-site.com";
-$iat = 1356999524;
-$nbf = 1357000000;
