@@ -36,9 +36,7 @@ $login_exists = $user->loginExists();
 // существует ли электронная почта и соответствует ли пароль тому, что находится в базе данных 
 if($login_exists && password_verify($data["password"], $user->user_password)){
 
-    var_dump($user);
-
-    $user = array(
+    $user_data = array(
         "ID" => $user->ID,
         "user_name" => $user->user_name,
         "user_login" => $user->user_login,
@@ -46,13 +44,17 @@ if($login_exists && password_verify($data["password"], $user->user_password)){
         "user_role" => $user->user_role
     );
 
-    // код ответа 
+    session_start();
+
+    $_SESSION["user"] = $user_data;
+
+    // код ответа
     http_response_code(200);
 
-    // создание jwt 
+    // создание jwt
     echo json_encode(
         array(
-            "user" => $user
+            "user" => $user_data
         )
     );
 }
@@ -65,5 +67,5 @@ else{
     http_response_code(401);
 
     // сказать пользователю что войти не удалось
-    echo json_encode(array("message" => "Login error"));
+    echo json_encode(array("message" => "Не удалось подключиться к серверу!"));
 }
