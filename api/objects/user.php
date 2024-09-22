@@ -21,8 +21,6 @@ class User {
 
     // Создание нового пользователя 
     function create() {
-        
-
         // Вставляем запрос 
         $query = "INSERT INTO " . $this->table_name . "
                 SET
@@ -35,8 +33,7 @@ class User {
         // подготовка запроса 
         
         $stmt = $this->conn->prepare($query);
-        
-        
+
         // инъекция 
         $this->user_name=htmlspecialchars(strip_tags($this->user_name));
         $this->user_login=htmlspecialchars(strip_tags($this->user_login));
@@ -63,22 +60,22 @@ class User {
     }
     
     // Проверка, существует ли электронная почта в нашей базе данных 
-    function emailExists(){
+    function loginExists(){
  
         // запрос, чтобы проверить, существует ли электронная почта 
         $query = "SELECT ID, user_name, user_login, user_password, user_role
                 FROM " . $this->table_name . "
-                WHERE user_email = ?
+                WHERE user_login = ?
                 LIMIT 0,1";
      
         // подготовка запроса 
         $stmt = $this->conn->prepare( $query );
      
         // инъекция 
-        $this->user_email=htmlspecialchars(strip_tags($this->user_email));
+        $this->user_login=htmlspecialchars(strip_tags($this->user_login));
      
         // привязываем значение e-mail 
-        $stmt->bindParam(1, $this->user_email);
+        $stmt->bindParam(1, $this->user_login);
      
         // выполняем запрос 
         $stmt->execute();
@@ -87,7 +84,7 @@ class User {
         $num = $stmt->rowCount();
      
         // если электронная почта существует, 
-        // присвоим значения свойствам объекта для легкого доступа и использования для php сессий 
+        // присвоим значения свойствам объекта для легкого доступа и использования для php сессий
         if($num>0) {
      
             // получаем значения 

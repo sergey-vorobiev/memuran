@@ -35,7 +35,7 @@ class Database {
 
 function newDatabase() {
     include_once 'connect-data.php';
-    return new Database($host_connect, $db_name_connect, $username_connect, $password_connect);
+    return new Database($host, $db_name, $username, $password);
 }
 
 ?>
