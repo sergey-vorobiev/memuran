@@ -1,0 +1,114 @@
+:root {
+    /* Spacing */
+    --space-xxxs: 0.25em;
+    --space-xxs: 0.375em;
+    --space-xs: 0.5em;
+    --space-sm: 0.75em;
+    --space-md: 1.25em;
+    --space-lg: 2em;
+    --space-xl: 3.25em;
+    --space-xxl: 5.25em;
+    --space-xxxl: 8.5em;
+
+    /* Typography */
+    --font-primary: "Nunito", sans-serif;
+    --font-secondary: var(--font-primary);
+
+    --align-text: left;
+
+    --text-base-size: 14px;
+    --text-scale-ratio: 1.15;
+
+    --text-xs: calc(1em / (var(--text-scale-ratio) * var(--text-scale-ratio)));
+    --text-sm: calc(1em / var(--text-scale-ratio));
+    --text-md: calc(1em * var(--text-scale-ratio));
+    --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+    --text-xxxl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+
+    --heading-line-height: 1.25;
+    --body-line-height: 1.5;
+
+    /* Base Colors */
+    --color-primary: #007bff; /* Акцентный цвет */
+    --color-secondary: #f4f4f4; /* Основной цвет */
+    --color-neutral: #444; /* Основной цвет текста */
+
+    /* Color Text */
+    --color-text: var(--color-neutral);
+    --color-text-heading: #222;
+    --color-text-subtle: #888;
+    --color-link: var(--color-primary);
+    --color-link-hover: var(--color-neutral);
+
+    /* Body */
+    --width-container: 720px;
+    --main-padding: 12px;
+
+    /* Image */
+    --image-border-radius: 12px;
+    --align-image: left;
+
+    /* Table */
+    --table-border-color: #ddd;
+    --table-header-bg: var(--color-secondary);
+    --table-header-color: #222;
+    --table-row-hover-bg: #f9f9f9;
+    --table-cell-padding: var(--space-xs) var(--space-sm);
+    --table-border-width: 1px;
+    --table-striped-row-bg: #fafafa;
+
+    /* Blockquote */
+    --blockquote-border-width: 2px;
+    --blockquote-border-color: #ccc;
+    --blockquote-bg: #f9f9f9;
+    --blockquote-text-color: #555;
+    --blockquote-padding: var(--space-sm) var(--space-md);
+    --blockquote-margin: var(--space-md) 0;
+    --blockquote-font-size: var(--text-md);
+    --blockquote-cite-color: var(--color-text-subtle);
+    --blockquote-cite-font-size: var(--text-sm);
+
+    /* Other */
+    --transition-duration: 0.3s;
+    --box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    /* Controls */
+    --form-space-sm: 8px;
+    --form-space-md: 16px;
+    --form-space-lg: 24px;
+
+    --form-bg-color: transparent;
+    --form-border-color: transparent;
+    --form-border-radius: 24px;
+    --form-input-bg-color: transparent;
+    --form-input-border-color: #ccc;
+    --form-input-border-radius: 12px;
+    --form-text-color: var(--color-neutral);
+    --form-label-color: var(--color-neutral);
+    --form-placeholder-color: #888;
+
+    --form-font-size: 16px;
+    --form-label-font-size: 14px;
+
+    --form-input-height: 40px;
+    --form-textarea-max-height: 500px;
+    --form-textarea-min-height: 160px;
+    --form-max-width: 100%;
+
+    /* Button */
+    --button-bg: var(--color-primary);
+    --button-hover-bg: #0056b3;
+    --button-height: 45px;
+    --button-border-radius: 12px;
+    --button-text-color: #fff;
+    --button-font-size: 16px;
+}
+
+@media (min-width: 720px) {
+    :root {
+        --text-base-size: 1.25em;
+        --image-border-radius: 24px;
+    }
+}
