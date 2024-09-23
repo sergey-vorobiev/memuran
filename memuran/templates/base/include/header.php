@@ -1,5 +1,6 @@
 <?php
 include_once "memuran/php_interface/init.php";
+var_dump(PATH_CURRENT_TEMPLATE);
 ?>
 <!doctype html>
 <html lang="ru">
@@ -8,6 +9,7 @@ include_once "memuran/php_interface/init.php";
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?=PATH_CURRENT_TEMPLATE . "template.css"?>">
+    <link rel="stylesheet" href="<?=PATH_CURRENT_TEMPLATE . "/css/calendar.css"?>">
 
     <!--  Временное подключение шрифта Nunito  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
