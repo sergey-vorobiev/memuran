@@ -1,3 +1,4 @@
+// Авторизация
 $(() => {
     initAuth();
 });
@@ -23,3 +24,18 @@ function initAuth() {
         });
     });
 }
+
+// Дашборд
+const navItems = document.querySelectorAll(".admin__nav-item");
+
+console.log(navItems);
+
+navItems.forEach((navItem, i) => {
+    navItem.addEventListener("click", () => {
+        navItems.forEach((item, j) => {
+            item.className = "admin__nav-item";
+        });
+        navItem.className = "admin__nav-item--active";
+    });
+});
+

@@ -9,7 +9,7 @@ include_once "../php_interface/init.php";
 session_start();
 
 if(isset($_SESSION["user"]) && $_SESSION["user"]["user_role"] === "admin"):?>
-    <a href="/memuran/admin/logout.php">Выйти из аккаунта</a>
+<!--    <a href="/memuran/admin/logout.php">Выйти из аккаунта</a>-->
     <?include_once "dashboard.php";?>
 <?php else: ?>
     <form action="/api/login.php" method="POST" class="form-auth">
