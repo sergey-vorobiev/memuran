@@ -8,6 +8,7 @@ const CURRENT_TEMPLATE = "base";
 
 // Абсолютные пути к директориям
 define("PATH_MAIN", $sMemuranPath);
+define("PATH_ADMIN", $sMemuranPath . "admin/");
 define("PATH_TEMPLATES", $sMemuranPath . "/templates/");
 define("PATH_CURRENT_TEMPLATE", $sMemuranPath . "/templates/" . CURRENT_TEMPLATE . "/");
 
