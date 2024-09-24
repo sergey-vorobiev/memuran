@@ -8,7 +8,6 @@
 }
 
 .day-week {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,7 +26,7 @@
     gap: 10px;
     font-size: 14px;
     font-weight: 700;
-    line-height: 130%; /* 18.2px */
+    line-height: 130%;
 }
 
 .month-title {
@@ -42,10 +41,11 @@
     text-align: center;
     font-size: 12px;
     font-weight: 700;
-    border-right: 1px solid var(--gray-100, #000);
-    border-bottom: 1px solid var(--gray-100, #000);
-    border-left: 1px solid var(--gray-100, #000);
-    border-radius: 0 0 6px 6px;
+    border-right: 1px solid var(--color-neutral);
+    border-bottom: 1px solid var(--color-neutral);
+    border-left: 1px solid var(--color-neutral);
+    border-radius: 0 0 var(--small-border-radius) var(--small-border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 .month-title:after {
@@ -55,7 +55,7 @@
     top: -2px;
     width: 12px;
     height: 12px;
-    background: var(--white, #FFF);
+    background: var(--color-white);
 }
 
 .month-title:before {
@@ -65,7 +65,7 @@
     top: -2px;
     width: 12px;
     height: 12px;
-    background: var(--white, #FFF);
+    background: var(--color-white);
 }
 
 .month-calendar {
@@ -73,22 +73,36 @@
     width: 100%;
     display: flex;
     gap: 4px;
-    background: var(--white, #FFF);
+    background: var(--color-white);
     padding: 12px 0px;
-    border-top: 1px solid;
+    border-top: 1px solid var(--color-neutral);
+}
+
+.month-calendar:before {
+    content: none;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid var(--color-neutral);
+    border-top: 1px solid var(--color-neutral);
+    border-radius: 0 var(--small-border-radius) 0 var(--small-border-radius);
+    background: var(--color-white);
+    z-index: 10;
 }
 
 .month-calendar:after {
     content: "";
     position: absolute;
     top: -1px;
-    left: -0.5px;
+    left: -1px;
     width: 12px;
     height: 12px;
-    border-left: 1px solid;
-    border-top: 1px solid;
-    border-radius: 6px 0 6px 0;
-    background: var(--white, #FFF);
+    border-left: 1px solid var(--color-neutral);
+    border-top: 1px solid var(--color-neutral);
+    border-radius: var(--small-border-radius) 0 var(--small-border-radius) 0;
+    background: var(--color-white);
 }
 
 .month-calendar:nth-child(n+13):nth-child(-n+16) {
@@ -119,31 +133,26 @@
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    border-radius: 6px;
-    transition: .2s;
+    border-radius: var(--small-border-radius);
+    transition: var(--transition-duration);
     border: 1px solid transparent;
 }
 
 .month-calendar .weeks div.day:hover {
-    border-color: #eee;
+    border-color: var(--color-secondary);
 }
 
 .month-calendar .weeks div.day > span {
     margin: 2px 0 0 1px;
     font-size: 14px;
     font-weight: 400;
-    line-height: 130%; /* 18.2px */
+    line-height: 130%;
 }
 
 .month-calendar .weeks div.day.active {
     background: #f78536;
-    color: var(--white, #FFF);
+    color: var(--color-white);
 }
-
-/*.month-calendar .weeks div.day:not(.last-month, .next-month, .last-day):hover {*/
-/*    cursor: pointer;*/
-/*    font-weight: 600;*/
-/*}*/
 
 .calendar__table .month-calendar .weeks div.day:not(.last-month, .next-month, .last-day):hover {
     cursor: default;
@@ -151,7 +160,7 @@
 }
 
 .month-calendar .event {
-    cursor: pointer !important;
+    cursor: pointer;
     position: relative;
 }
 
@@ -162,67 +171,13 @@
     position: absolute;
     left: calc(50% - 1px);
     bottom: 5px;
-    background: var(--primary-500-base, #FF8559);
+    background: var(--color-primary);
     border-radius: 50%;
-}
-
-@media (max-width: 1333px) {
-    .day-week:first-child {
-        display: none;
-    }
-
-    .month-calendar:not(:nth-child(3n)):before {
-        content: "";
-        position: absolute;
-        top: -1px;
-        right: -1px;
-        width: 12px;
-        height: 12px;
-        border-right: 1px solid;
-        border-top: 1px solid;
-        border-radius: 0 6px 0 6px;
-        background: var(--white, #FFF);
-        z-index: 10;
-    }
-}
-
-@media (max-width: 1007px) {
-    .day-week:not(:nth-child(2n)) {
-        display: none;
-    }
-
-    .month-calendar:not(:nth-child(2n)):before {
-        content: "";
-        position: absolute;
-        top: -1px;
-        right: -1px;
-        width: 12px;
-        height: 12px;
-        border-right: 1px solid;
-        border-top: 1px solid;
-        border-radius: 0 6px 0 6px;
-        background: var(--white, #FFF);
-        z-index: 10;
-    }
 }
 
 @media (max-width: 719px) {
     .day-week:not(:first-child) {
         display: none;
-    }
-
-    .month-calendar:before {
-        content: "";
-        position: absolute;
-        top: -1px;
-        right: -1px;
-        width: 12px;
-        height: 12px;
-        border-right: 1px solid;
-        border-top: 1px solid;
-        border-radius: 0 6px 0 6px;
-        background: var(--white, #FFF);
-        z-index: 10;
     }
 }
 
@@ -237,35 +192,45 @@
         margin: 0 auto;
     }
 
-    .month-title {
-        padding: 5.5px;
+    .weeks, .day-week {
+        padding: 0 12px;
     }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 720px) and (max-width: 1007px) {
     .year-calendar {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .weeks {
-        padding: 0 12px;
+    .day-week:not(:nth-child(2n)) {
+        display: none;
     }
 
-    .month-title {
-        padding: 5px;
+    .month-calendar:not(:nth-child(2n)):before {
+        content: "";
     }
 }
 
-@media (min-width: 1008px) {
+@media (min-width: 1008px) and (max-width: 1333px) {
     .year-calendar {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .weeks {
-        padding: 0 12px;
+    .day-week:first-child {
+        display: none;
     }
 
-    .month-title {
-        padding: 5px;
+    .month-calendar:not(:nth-of-type(3n)):before {
+        content: "";
+    }
+}
+
+@media (min-width: 1334px) {
+    .year-calendar {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .month-calendar:not(:nth-of-type(4n)):before {
+        content: "";
     }
 }

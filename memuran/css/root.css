@@ -10,6 +10,12 @@
     --space-xxl: 5.25em;
     --space-xxxl: 8.5em;
 
+    /* Border Radius */
+    --small-border-radius: 6px;
+    --base-border-radius: 12px;
+    --large-border-radius: 24px;
+    --raund-border-radius: 50%;
+
     /* Typography */
     --font-primary: "Nunito", sans-serif;
     --font-secondary: var(--font-primary);
@@ -31,6 +37,7 @@
     --body-line-height: 1.5;
 
     /* Base Colors */
+    --color-white: #FFFFFF;
     --color-primary: #007bff; /* Акцентный цвет */
     --color-secondary: #f4f4f4; /* Основной цвет */
     --color-neutral: #444; /* Основной цвет текста */
@@ -84,7 +91,7 @@
     --form-border-radius: 24px;
     --form-input-bg-color: transparent;
     --form-input-border-color: #ccc;
-    --form-input-border-radius: 12px;
+    --form-input-border-radius: var(--base-border-radius);
     --form-text-color: var(--color-neutral);
     --form-label-color: var(--color-neutral);
     --form-placeholder-color: #888;
@@ -101,7 +108,7 @@
     --button-bg: var(--color-primary);
     --button-hover-bg: #0056b3;
     --button-height: 45px;
-    --button-border-radius: 12px;
+    --button-border-radius: var(--base-border-radius);
     --button-text-color: #fff;
     --button-font-size: 16px;
 }
@@ -109,6 +116,6 @@
 @media (min-width: 720px) {
     :root {
         --text-base-size: 16px;
-        --image-border-radius: 24px;
+        --image-border-radius: var(--large-border-radius);
     }
 }
