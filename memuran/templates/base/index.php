@@ -100,14 +100,18 @@
             <h2>Комментарии</h2>
             <article>
                 <header>
-                    <p><strong>Аноним</strong> - <time datetime="2024-09-21T14:00">21 сен 2024, 14:00</time></p>
+                    <p><strong>Аноним</strong> -
+                        <time datetime="2024-09-21T14:00">21 сен 2024, 14:00</time>
+                    </p>
                 </header>
                 <p>Очень полезная статья, спасибо!</p>
             </article>
 
             <article>
                 <header>
-                    <p><strong>Ольга</strong> - <time datetime="2024-09-21T15:30">21 сен 2024, 15:30</time></p>
+                    <p><strong>Ольга</strong> -
+                        <time datetime="2024-09-21T15:30">21 сен 2024, 15:30</time>
+                    </p>
                 </header>
                 <p>Хотелось бы увидеть больше информации о данном вопросе.</p>
             </article>
