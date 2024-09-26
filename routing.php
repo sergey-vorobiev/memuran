@@ -4,22 +4,22 @@
  * Роутинг для сайта
  */
 
-$sRequest = $_SERVER['REQUEST_URI'];
+$sPathUrl = explode("?", $_SERVER["REQUEST_URI"])[0];
 
-switch($sRequest){
-    case '/':
+switch($sPathUrl){
+    case "/":
         require_once __DIR__ . PATH_CURRENT_TEMPLATE . "index.php";
         break;
 
-    case '/events/':
+    case "/events/":
         require_once __DIR__ . PATH_CURRENT_TEMPLATE . "events.php";
         break;
 
-    case '/calendar/':
+    case "/calendar/":
         require_once __DIR__ . PATH_CURRENT_TEMPLATE . "calendar.php";
         break;
 
-    case '/admin/':
+    case "/admin/":
         require_once __DIR__ . PATH_MAIN . "admin/index.php";
         break;
 

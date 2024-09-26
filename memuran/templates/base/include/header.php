@@ -1,3 +1,8 @@
+<?php
+/**
+ * @var string $sPathUrl - путь без GET параметров
+ */
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -18,9 +23,9 @@
         <div class="header">
             <h1>Книга жизни</h1>
             <div class="header-menu">
-                <a href="/">Главная</a>
-                <a href="/events/">События</a>
-                <a href="/calendar/">Календарь</a>
+                <a href="/"<?=$sPathUrl === "/" ? ' class="active"' : ""?>>Главная</a>
+                <a href="/events/"<?=$sPathUrl === "/events/" ? ' class="active"' : ""?>>События</a>
+                <a href="/calendar/"<?=$sPathUrl === "/calendar/" ? ' class="active"' : ""?>>Календарь</a>
             </div>
         </div>
     </div>
