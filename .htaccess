@@ -1,7 +1,7 @@
 RewriteEngine On
 RewriteBase /
 Options +FollowSymLinks
-php_flag display_errors off
+php_flag display_errors on
 php_flag allow_url_fopen off
 
 #RewriteCond %{ENV:HTTPS} on
@@ -13,25 +13,19 @@ php_flag allow_url_fopen off
 #RewriteCond %{REQUEST_URI} !^/bitrix/admin/1c_exchange\.php$ [NC]
 #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-RewriteCond %{REQUEST_URI} ^(.*)/index\.php$
-RewriteCond %{REQUEST_METHOD} =GET
-RewriteRule ^(.*)$ %1/ [R=301,L]
+#RewriteCond %{REQUEST_URI} ^(.*)/index\.php$
+#RewriteCond %{REQUEST_METHOD} =GET
+#RewriteRule ^(.*)$ %1/ [R=301,L]
 
-RewriteCond %{THE_REQUEST} //
-RewriteCond %{QUERY_STRING} !http(s|)://
-RewriteRule .* /$0 [R=301,L]
+#RewriteCond %{THE_REQUEST} //
+#RewriteCond %{QUERY_STRING} !http(s|)://
+#RewriteRule .* /$0 [R=301,L]
 
-RewriteCond %{REQUEST_URI} \..+$
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteCond %{REQUEST_URI} ^(.+)/$
-RewriteRule ^(.+)/$ /$1 [R=301,L]
-
-RewriteCond %{REQUEST_URI} !(.*)/$
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} !\..+$
-RewriteCond %{REQUEST_URI} ^(.+)$
-RewriteRule ^(.*)$ $1/ [L,R=301]
+#RewriteCond %{REQUEST_URI} \..+$
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} -f
+#RewriteCond %{REQUEST_URI} ^(.+)/$
+#RewriteRule ^(.+)/$ /$1 [R=301,L]
 
 # Компрессия отключено на время разработки
 #<IfModule mod_deflate.c>
@@ -90,3 +84,13 @@ RewriteRule ^(.*)$ $1/ [L,R=301]
 #    Header set Cache-Control "max-age=31536000, private"
 #  </filesmatch>
 #</IfModule>
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /index.php
+
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\..+$
+RewriteCond %{REQUEST_URI} ^(.+)$
+RewriteRule ^(.*)$ $1/ [L,R=301]

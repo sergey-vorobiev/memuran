@@ -1,6 +1,7 @@
 <?php
-//Константы
-require_once dirname(__FILE__) . "/constants.php";
 
-//Функции
-require_once dirname(__FILE__) . "/functions.php";
+// Константы
+require_once "constants.php";
+
+// Функции
+require_once "functions.php";
