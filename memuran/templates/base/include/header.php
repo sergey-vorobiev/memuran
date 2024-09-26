@@ -20,12 +20,11 @@ include_once "../memuran/php_interface/init.php";
     <div class="container">
         <div class="header">
             <h1>Книга жизни</h1>
-            <select class="js-select-year">
-                <option value="" disabled="disabled">Год</option>
-                <?php for($iYear = 2001; $iYear <= date("Y"); $iYear++): ?>
-                    <option value="<?=$iYear?>" <?php if ($iYear === (int)date("Y")) echo('selected="selected"');?>><?=$iYear?></option>
-                <?php endfor; ?>
-            </select>
+            <div class="header-menu">
+                <a href="/">Главная</a>
+                <a href="/events/">События</a>
+                <a href="/calendar/">Календарь</a>
+            </div>
         </div>
     </div>
 </section>

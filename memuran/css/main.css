@@ -221,6 +221,12 @@ form {
     box-shadow: var(--box-shadow);
 }
 
+.group-input {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xxxs);
+}
+
 label {
     display: block;
     margin-bottom: var(--form-space-sm);
@@ -286,13 +292,6 @@ select {
     cursor: pointer;
     border: 1px solid var(--color-neutral);
     outline: 0;
-
-}
-
-@media (min-width: 720px) {
-    select {
-        padding: var(--space-sm) var(--space-xxl);
-    }
 }
 
 /* Header */
@@ -311,9 +310,35 @@ select {
     margin: 0px;
 }
 
+.header-menu {
+    display: flex;
+    height: 100%;
+}
+
+.header-menu a {
+    color: var(--color-neutral);
+    height: 100%;
+    padding: 0 var(--space-xxs);
+    transition: var(--transition-duration);
+}
+
+.header-menu a:hover {
+    color: var(--color-primary);
+}
+
+.header-menu a.active {
+    color: var(--color-primary);
+}
+
 /* Article */
 
 .article-header {
     display: flex;
     justify-content: space-between;
+}
+
+/* Footer */
+
+.footer {
+    padding: 20px;
 }
