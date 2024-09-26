@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--    <link rel="stylesheet" href="--><? //=PATH_CURRENT_TEMPLATE . "template.css"?><!--">-->
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="<?=PATH_ADMIN . "assets/css/admin.css"?>">
 
     <!--  Временное подключение шрифта Nunito  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,11 +17,11 @@
 <body>
 <main class="admin__sidebar">
     <nav class="admin__nav">
-        <a class="admin__nav-logo logo" href="<?php PATH_ADMIN?>">Memuran</a>
+        <a class="admin__nav-logo logo" href="<?php PATH_ADMIN ?>">Memuran</a>
         <ul class="admin__nav-list">
             <li class="admin__nav-item admin__nav-item--active">
-                <svg class="admin__nav-icon" width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 8H21M3 12H21M3 16H21M3 20H15M3 4H21" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: red">
+                    <use href="<?= PATH_ADMIN . "assets/images/icons.svg#articles"?>">
                 </svg>
                 <a href="#" class="admin__nav-link">Записи</a>
             </li>

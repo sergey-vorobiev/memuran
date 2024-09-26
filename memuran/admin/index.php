@@ -17,4 +17,4 @@ if(isset($_SESSION["user"]) && $_SESSION["user"]["user_role"] === "admin"):?>
 <?php endif; ?>
 
 <script src="<?=PATH_MAIN . "js/jquery-3.7.1.min.js"?>"></script>
-<script src="<?=PATH_MAIN . "js/admin.js"?>"></script>
+<script src="<?=PATH_ADMIN . "assets/js/admin.js"?>"></script>

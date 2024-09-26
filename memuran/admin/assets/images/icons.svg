@@ -1,0 +1,23 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="articles">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M7.00011 8.93933L7.53044 9.46966L12.0001 13.9393L16.4698 9.46966L17.0001 8.93933L18.0608 9.99999L17.5304 10.5303L12.5304 15.5303C12.2375 15.8232 11.7627 15.8232 11.4698 15.5303L6.46978 10.5303L5.93945 9.99999L7.00011 8.93933Z"
+              fill="currentColor"/>
+    </symbol>
+    <symbol id="categories" fill="currentColor">
+        <defs>
+            <style>.cls-1{fill:none;}</style>
+        </defs>
+        <title>collapse-categories</title>
+        <rect x="14" y="25" width="14" height="2"/>
+        <polygon points="7.17 26 4.59 28.58 6 30 10 26 6 22 4.58 23.41 7.17 26"/>
+        <rect x="14" y="15" width="14" height="2"/>
+        <polygon points="7.17 16 4.59 18.58 6 20 10 16 6 12 4.58 13.41 7.17 16"/>
+        <rect x="14" y="5" width="14" height="2"/>
+        <polygon points="7.17 6 4.59 8.58 6 10 10 6 6 2 4.58 3.41 7.17 6"/>
+        <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+    </symbol>
+    <symbol id="exit" fill="currentColor">
+        <path d="M12.207 9H5V7h7.136L11.05 5.914 12.464 4.5 16 8.036l-3.536 3.535-1.414-1.414L12.207 9zM10 4H8V2H2v12h6v-2h2v4H0V0h10v4z" fill-rule="evenodd"/>
+    </symbol>
+</svg>
