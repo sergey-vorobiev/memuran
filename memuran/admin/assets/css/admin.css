@@ -55,6 +55,9 @@
 .admin__nav-item--active {
     background: rgb(254, 254, 254);
 }
+.admin__nav-item--active .admin__nav-icon{
+    color: #000;
+}
 .admin__nav-item--active .admin__nav-link {
     text-decoration: none;
     color: #000;
@@ -64,6 +67,9 @@
 }
 .admin__nav-item--active::marker {
     content: none;
+}
+.admin__nav-icon {
+    color: #fff;
 }
 .admin__nav-link {
     display: block;
@@ -88,5 +94,5 @@
     color: #000;
 }
 .admin__nav-item:hover .admin__nav-icon {
-    fill: #000;
+    color: #000;
 }
