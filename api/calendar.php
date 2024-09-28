@@ -97,8 +97,12 @@ $sYear = $_POST["year"];
         <li>Вс</li>
     </ul>
 <?php endfor; ?>
-<?php for($iMonth = 1; $iMonth <= 12; $iMonth++): ?>
-    <div class="month-calendar">
+<?php
+$iCountMonth = 12;
+if ($sYear === date("Y")) $iCountMonth = date("m");
+?>
+<?php for($iMonth = 1; $iMonth <= $iCountMonth  ; $iMonth++): ?>
+    <div class="month-calendar<?=$sYear === date("Y") && $iMonth === (int)$iCountMonth ? " last-month-calendar" : ""?>">
         <div class="month-title">
             <?=$arMonth[$iMonth - 1]?>
         </div>
