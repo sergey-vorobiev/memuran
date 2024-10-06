@@ -94,8 +94,13 @@
                     </section>
                 </table>
             </section>
-        </article>
 
+            <section class="article__gallery">
+                <div class="article__gallery-item" style="background: url("<?=PATH_UPLOAD_PICTURES . "test-image.jpg"?>")"></div>
+                <div class="article__gallery-item" style="background: url("<?=PATH_UPLOAD_PICTURES . "test-image.jpg"?>")"></div>
+                <div class="article__gallery-item" style="background: url("<?=PATH_UPLOAD_PICTURES . "test-image.jpg"?>")"></div>
+            </section>
+        </article>
         <section>
             <h2>Комментарии</h2>
             <article>

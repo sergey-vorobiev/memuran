@@ -86,11 +86,12 @@ php_flag allow_url_fopen off
 #</IfModule>
 
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ index.php
 
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !\..+$
 RewriteCond %{REQUEST_URI} ^(.+)$
 RewriteRule ^(.*)$ $1/ [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /index.php
