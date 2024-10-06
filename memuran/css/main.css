@@ -1,5 +1,11 @@
 @import url("root.css");
 
+*,
+* :before,
+*:after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0px;
     font-size: var(--text-base-size);
