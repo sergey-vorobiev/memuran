@@ -57,6 +57,7 @@ if($login_exists && password_verify($data["password"], $user->user_password)){
             "user" => $user_data
         )
     );
+    header("Location: /admin/");
 }
 
 // Если электронная почта не существует или пароль не совпадает, 
