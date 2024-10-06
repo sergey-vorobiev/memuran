@@ -94,8 +94,13 @@
                 <p>Это заключительная часть статьи. Здесь можно подвести итоги и оставить ссылку на другие статьи или
                     ресурсы.</p>
             </section>
-        </article>
 
+            <section class="article__gallery">
+                <div class="article__gallery-item" style="background: url("<?=PATH_UPLOAD_PICTURES . "test-image.jpg"?>")"></div>
+                <div class="article__gallery-item" style="background: url("<?=PATH_UPLOAD_PICTURES . "test-image.jpg"?>")"></div>
+                <div class="article__gallery-item" style="background: url("<?=PATH_UPLOAD_PICTURES . "test-image.jpg"?>")"></div>
+            </section>
+        </article>
         <section>
             <h2>Комментарии</h2>
             <article>

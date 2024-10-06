@@ -114,6 +114,10 @@
     border-bottom: none;
 }
 
+.last-month-calendar:before {
+    content: none !important;
+}
+
 .month-calendar .weeks {
     width: 100%;
     display: flex;
