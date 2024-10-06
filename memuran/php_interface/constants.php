@@ -5,6 +5,7 @@ define("PATH_MAIN", "/memuran/");
 define("CURRENT_TEMPLATE", "base");
 
 // Абсолютные пути к директориям
+define("PATH_ADMIN", PATH_MAIN . "admin/");
 define("PATH_TEMPLATES", PATH_MAIN . "templates/");
 define("PATH_CURRENT_TEMPLATE", PATH_TEMPLATES . CURRENT_TEMPLATE . "/");
 

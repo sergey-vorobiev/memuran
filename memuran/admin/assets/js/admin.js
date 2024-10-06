@@ -1,3 +1,4 @@
+// Авторизация
 $(() => {
     initAuth();
 });
@@ -23,3 +24,13 @@ function initAuth() {
         });
     });
 }
+
+// Дашборд
+const navItems = $(".admin__nav-item");
+
+navItems.on("click", function(e) {
+    if(!$(this).hasClass("admin__nav-item--active")) {
+        navItems.removeClass("admin__nav-item--active");
+        $(this).addClass("admin__nav-item--active");
+    }
+})
