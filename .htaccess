@@ -87,7 +87,7 @@ php_flag allow_url_fopen off
 
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)$ /index.php
+RewriteRule ^(.*)$ index.php
 
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteCond %{REQUEST_FILENAME} !-f
